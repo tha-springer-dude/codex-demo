@@ -20,10 +20,43 @@ h1 {
   color: #d70015;
 }
 
+.content-layout {
+  display: flex;
+  gap: 24px;
+  align-items: stretch;
+}
+
 form {
+  flex: 1;
   display: flex;
   flex-direction: column;
   gap: 12px;
+}
+
+.symbol-panel {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100%;
+  padding: 24px;
+  border: 1px solid #d2d2d7;
+  border-radius: 20px;
+  background: linear-gradient(180deg, #fbfbfd 0%, #f1f1f3 100%);
+}
+
+.symbol-mark {
+  width: 120px;
+  height: 120px;
+  animation: fade-pulse 3.2s ease-in-out infinite;
+}
+
+.symbol-mark text {
+  fill: #1d1d1f;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 72px;
+  font-weight: 600;
+  letter-spacing: -2px;
 }
 
 label {
@@ -54,4 +87,21 @@ img {
 
 .field-error {
   border-color: #d70015;
+}
+
+@keyframes fade-pulse {
+  0%,
+  100% {
+    opacity: 0.45;
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 720px) {
+  .content-layout {
+    flex-direction: column;
+  }
 }
